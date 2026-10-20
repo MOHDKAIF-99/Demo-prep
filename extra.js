@@ -44,7 +44,7 @@ function loadUrl(src, i) {
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    if (WEB3FORMS_KEY === 'YOUR_ACCESS_KEY_HERE') { msg.textContent = 'Add your Web3Forms key in config.js first.'; return; }
+    if (WEB3FORMS_KEY === ' cd475df0-3882-40ee-999d-d4476d0792ea') { msg.textContent = 'Add your Web3Forms key in config.js first.'; return; }
     if (!rating) { msg.textContent = 'Please tap a star rating.'; return; }
     const fd = new FormData(form);
     const body = {
