@@ -8,15 +8,45 @@
 <div id="toast"></div>
 <div id="joy"><i></i></div>
 <div id="hud"><div id="hint">WASD / arrows walk · drag to look · E sit · F dance · Space view photo</div>
-<div class="row"><button id="bSit">Sit (E)</button><button id="bDance">Dance (F)</button><button id="bView">View photo</button><button id="bAdd">Add your photos</button></div></div>
+<div class="row"><button id="bSit">Sit (E)</button><button id="bDance">Dance (F)</button><button id="bView">View photo</button><button id="bAdd">Add your photos</button><button id="bFb">Give feedback</button></div></div>
 <input id="fi" type="file" accept="image/*" multiple hidden>
 <div id="lb" hidden><img id="lbi" alt=""><div id="lbc"></div><div class="row" style="display:flex;gap:8px"><button id="rep">Replace this photo</button><button id="cls">Close</button></div></div>
+
+<!-- Feedback form -->
+<div id="fb" hidden>
+  <form id="fbForm" class="fbcard" autocomplete="off">
+    <h2 class="serif">How was the museum?</h2>
+    <p class="fbsub">Did you enjoy it? Tell us what you felt.</p>
+    <div class="stars" id="stars" role="radiogroup" aria-label="Rating">
+      <button type="button" data-v="1" aria-label="1 star">★</button><button type="button" data-v="2" aria-label="2 stars">★</button><button type="button" data-v="3" aria-label="3 stars">★</button><button type="button" data-v="4" aria-label="4 stars">★</button><button type="button" data-v="5" aria-label="5 stars">★</button>
+    </div>
+    <div class="enj" id="enj">
+      <label><input type="radio" name="enjoyed" value="Yes, loved it" checked> Loved it</label>
+      <label><input type="radio" name="enjoyed" value="It was okay"> It was okay</label>
+      <label><input type="radio" name="enjoyed" value="Not really"> Not really</label>
+    </div>
+    <input type="text" name="name" placeholder="Your name (optional)" maxlength="40">
+    <textarea name="message" rows="4" placeholder="Write your feedback here..." maxlength="1000" required></textarea>
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <div class="fbrow"><button type="button" id="fbClose">Close</button><button type="submit" id="fbSend" class="prim">Send feedback</button></div>
+    <div id="fbMsg" class="fbmsg"></div>
+  </form>
+</div>
+
 <div id="intro">
 <h1 class="serif">Our Museum</h1>
-<div class="names"><span>From</span><input id="n1" value="KAIF" maxlength="14"><span>|</span><span>To</span><input id="n2" value="SUMBULl" maxlength="14"></div>
+<div class="names"><span>From</span><input id="n1" value="KAIF" maxlength="14"><span>|</span><span>To</span><input id="n2" value="SUMBULL" maxlength="14"></div>
 <div class="bar"><i id="pb"></i></div><div class="meta"><span>Preparing the collection</span><span id="pc">0%</span></div>
+<div class="guide"><b class="serif">How to walk in the museum</b>
+<div class="gcols">
+<div class="gc g-d"><h3>Computer</h3><ul><li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrow keys: walk</li><li>Drag with the mouse: look around</li><li><kbd>E</kbd> sit on a bench</li><li><kbd>F</kbd> dance together</li><li><kbd>Space</kbd> or click a photo: zoom in</li></ul></div>
+<div class="gc g-m"><h3>Mobile</h3><ul><li>Round joystick (bottom left): walk</li><li>Drag on the screen: look around</li><li>Bottom buttons: Sit, Dance, View photo</li><li>Tap a photo: zoom in</li></ul></div>
+</div>
+<p>Tip: your partner follows you everywhere. When you are done, tap "Give feedback".</p></div>
 <button id="go">Enter the museum</button>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="script.js"></script>
+<script src="config.js"></script>
+<script src="extra.js"></script>
 </body></html>
